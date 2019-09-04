@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Key } from 'protractor';
 
 @Injectable()
 export class HeroesService {
@@ -97,6 +98,31 @@ export class HeroesService {
     getHeroe(idx: string) {
         // TODO:validar el índice, entre 0 y el último del array
         return this.heroes[ idx ];
+    }
+    buscarHeroes( termino: string) {
+
+        let heroesArray: Heroe[] = [];
+
+        termino = termino.toLowerCase();
+
+        // let indice: number = 0;
+
+        for (let heroe of this.heroes) {
+
+                let nombre: string = heroe.nombre.toLowerCase();
+
+                if ( nombre.indexOf( termino ) >= 0 ) {
+                    heroesArray.push( heroe );
+                    console.log(heroesArray);
+                    // console.log( indice);
+               // } else {
+                   // indice = indice + 1;
+                }
+
+        }
+
+        return heroesArray;
+
     }
 
 }
