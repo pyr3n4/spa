@@ -3,19 +3,11 @@
 
 <div class="card-columns">
 
-    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
-        <!-- <img src= {{ heroe.png }}" class="card-img-top" alt="image_hero"> // angularjs -->
-        <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
+    <!-- Se sustituye el html original por el componente heroe-tarjeta, con la misma 
+        directiva ngFor del original -->
+    <!-- Se envía la propiedad, heroe con el valor "heroe", que es el nombre del elemento Heroe del array
+         y la propiedad index con el número de índice del elemento -->
+    <app-heroe-tarjeta [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
 
-        <div class="card-body">
-            <h5 class="card-title">{{ heroe.nombre }}</h5>
-
-            <p class="card-text">{{ heroe.bio }}</p>
-            <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
-
-            <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver más...</button>
-            <!-- <a class="btn btn-outline-primary" [routerLink]="['/heroe', i]">Ver más link...</a> -->
-        </div>
-    </div>
 
 </div>

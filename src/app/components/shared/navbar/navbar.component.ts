@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  // tslint:disable-next-line: variable-name
   constructor( private _heroesService: HeroesService,
                private router: Router) { }
 
@@ -17,7 +18,7 @@ export class NavbarComponent implements OnInit {
   buscarHeroe( termino: string ) { // localiza
     console.log(termino);
     // redirección a otro componente
-    this.router.navigate( ['/heroe', termino] );
+    this.router.navigate( ['/buscar', termino] );
 
 
     // con este termino se localiza el héroe con el servicio y el método buscarHeroes(termino)

@@ -99,6 +99,7 @@ export class HeroesService {
         // TODO:validar el índice, entre 0 y el último del array
         return this.heroes[ idx ];
     }
+
     buscarHeroes( termino: string) {
 
         let heroesArray: Heroe[] = [];
