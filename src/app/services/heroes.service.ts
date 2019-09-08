@@ -106,20 +106,32 @@ export class HeroesService {
 
         termino = termino.toLowerCase();
 
-        // let indice: number = 0;
+        // Iteración sin manejar el índice del elemento
 
-        for (let heroe of this.heroes) {
+        // for (let heroe of this.heroes) {
 
-                let nombre: string = heroe.nombre.toLowerCase();
+        //         let nombre: string = heroe.nombre.toLowerCase();
 
-                if ( nombre.indexOf( termino ) >= 0 ) {
+        //         if ( nombre.indexOf( termino ) >= 0 ) {
+        //             heroesArray.push( heroe );
+        //             console.log(heroesArray);
+        //         }
+
+        // }
+
+        for (let i = 0; i < this.heroes.length; i++) {
+
+            let heroe: Heroe = this.heroes[i];
+            
+            let nombre: string = heroe.nombre.toLowerCase();
+
+            if ( nombre.indexOf( termino ) >= 0 ) {
+
+                    heroe.idx = i; // Anyadido para poder trabajar con el índice propio de cada elemento Heroe
                     heroesArray.push( heroe );
                     console.log(heroesArray);
-                    // console.log( indice);
-               // } else {
-                   // indice = indice + 1;
                 }
-
+            
         }
 
         return heroesArray;
@@ -136,4 +148,5 @@ export interface Heroe {
         img: string;
         aparicion: string;
         casa: string;
+        idx?: number; // Anyadido para poder trabajar con el índice propio de cada elemento Heroe
     }
