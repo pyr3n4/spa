@@ -11,19 +11,22 @@
 
 <div class="card-columns">
 
-    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
-        <!-- <img src= {{ heroe.png }}" class="card-img-top" alt="image_hero"> // angularjs -->
-        <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
+    <app-heroe-tarjeta [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
 
-        <div class="card-body">
-            <h5 class="card-title">{{ heroe.nombre }}</h5>
+    <!-- <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index"> -->
+    <!-- comentado <img src= {{ heroe.png }}" class="card-img-top" alt="image_hero"> // angularjs -->
+    <!-- <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre"> -->
 
-            <p class="card-text">{{ heroe.bio }}</p>
-            <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
+    <!-- <div class="card-body"> -->
+    <!-- <h5 class="card-title">{{ heroe.nombre }}</h5> -->
 
-            <!-- <button (click)="verHeroe(0)" type="button" class="btn btn-outline-primary btn-block">Ver más...</button> -->
-            <!-- <a class="btn btn-outline-primary" [routerLink]="['/heroe', i]">Ver más link...</a> -->
-        </div>
-    </div>
+    <!-- <p class="card-text">{{ heroe.bio }}</p> -->
+    <!-- <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p> -->
+
+
+    <!-- <a class="btn btn-outline-primary" [routerLink]="['/heroe', i]">Ver más link...</a> -->
+    <!-- </div> -->
+    <!-- <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver más...</button> -->
+    <!-- </div> -->
 
 </div><i class="fa fa-y-combinator" aria-hidden="true"></i>

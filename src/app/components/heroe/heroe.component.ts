@@ -17,6 +17,7 @@ export class HeroeComponent {
     MostrarDC = true;
 
   constructor( private activatedRoute: ActivatedRoute,
+               // tslint:disable-next-line: variable-name
                private _heroesService: HeroesService ) {
 
     this.activatedRoute.params.subscribe( params => {

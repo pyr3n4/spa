@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService, Heroe } from 'src/app/services/heroes.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -14,6 +14,7 @@ export class SearchComponent implements OnInit {
   constructor( private activatedRoute: ActivatedRoute,
                // tslint:disable-next-line: variable-name
                private _heroesService: HeroesService,
+               private router: Router
               ) {
     this.activatedRoute.params.subscribe( params => {
       // Forma más segura de acceder al id que con params.id;
@@ -26,9 +27,9 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  // verHeroe( idx: number ) {
-  //   // console.log(idx);
-  //   this.router.navigate( ['/heroe', idx] );
-  // }
+  verHeroe( idx: number ) {
+    console.log(idx);
+    this.router.navigate( ['/heroe', idx] );
+  }
 
 }
